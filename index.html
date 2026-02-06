@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyFlow | Ton Hub Scolaire Collaboratif</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; }
+    </style>
+</head>
+<body>
+
+    <nav class="bg-indigo-600 text-white p-4 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold flex items-center gap-2">
+                <i class="fas fa-graduation-cap"></i> StudyFlow
+            </h1>
+            <div class="space-x-6 flex items-center">
+                <span id="userStatus" class="text-sm bg-indigo-500 px-3 py-1 rounded-full">Mode Connecté</span>
+                <button class="bg-white text-indigo-600 px-4 py-2 rounded-lg font-semibold hover:bg-indigo-50 transition">
+                    <i class="fas fa-plus"></i> Nouveau
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mx-auto mt-8 grid grid-cols-1 lg:grid-cols-4 gap-6 p-4">
+        
+        <aside class="lg:col-span-1 space-y-6">
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                <h3 class="font-bold text-gray-800 mb-4 italic">Statistiques de classe</h3>
+                <div class="space-y-4">
+                    <div class="flex justify-between items-center">
+                        <span class="text-gray-500">Ressources partagées</span>
+                        <span class="font-bold text-indigo-600">42</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="text-gray-500">Devoirs en cours</span>
+                        <span class="font-bold text-orange-500">12</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-br from-indigo-500 to-purple-600 p-6 rounded-2xl text-white shadow-md">
+                <h3 class="font-bold mb-2">Supabase Sync</h3>
+                <p class="text-sm opacity-90">Toutes vos données sont synchronisées en temps réel pour tous les élèves.</p>
+            </div>
+        </aside>
+
+        <main class="lg:col-span-3 space-y-8">
+            
+            <section class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-xl font-bold text-gray-800"><i class="fas fa-tasks text-indigo-500 mr-2"></i>Devoirs & Projets</h2>
+                    <span class="text-xs font-semibold bg-blue-100 text-blue-600 px-2 py-1 rounded">Communautaire</span>
+                </div>
+                <div class="space-y-3">
+                    <div class="flex items-center p-3 bg-gray-50 rounded-xl border-l-4 border-red-500">
+                        <input type="checkbox" class="h-5 w-5 rounded border-gray-300 text-indigo-600">
+                        <div class="ml-4 flex-grow">
+                            <p class="font-semibold text-gray-700">DM de Maths - Géométrie</p>
+                            <p class="text-xs text-gray-400 italic">Échéance : Demain</p>
+                        </div>
+                        <span class="px-3 py-1 text-xs bg-red-100 text-red-600 rounded-full font-bold">Urgent</span>
+                    </div>
+                    <div class="mt-4 flex gap-2">
+                        <input type="text" placeholder="Ajouter un devoir..." class="flex-grow p-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400">
+                        <button class="bg-indigo-600 text-white px-4 py-2 rounded-lg"><i class="fas fa-paper-plane"></i></button>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2 class="text-xl font-bold text-gray-800 mb-4 ml-2 italic">Dernières Ressources Partagées</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition">
+                        <div class="flex items-start justify-between">
+                            <div class="bg-blue-100 p-3 rounded-lg text-blue-600"><i class="fas fa-file-pdf fa-2x"></i></div>
+                            <button class="text-gray-400 hover:text-red-500"><i class="fas fa-heart"></i></button>
+                        </div>
+                        <h4 class="mt-4 font-bold text-gray-800">Fiche de révision - Histoire</h4>
+                        <p class="text-sm text-gray-500 mt-1">Posté par Thomas le 05/10</p>
+                        <div class="mt-4 flex gap-2">
+                            <span class="text-[10px] bg-gray-100 px-2 py-1 rounded text-gray-600 font-bold uppercase">Bac 2024</span>
+                            <span class="text-[10px] bg-gray-100 px-2 py-1 rounded text-gray-600 font-bold uppercase">Histoire</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition">
+                        <div class="flex items-start justify-between">
+                            <div class="bg-green-100 p-3 rounded-lg text-green-600"><i class="fas fa-link fa-2x"></i></div>
+                            <button class="text-gray-400 hover:text-red-500"><i class="fas fa-heart"></i></button>
+                        </div>
+                        <h4 class="mt-4 font-bold text-gray-800">Vidéo explicative : Liaisons Chimiques</h4>
+                        <p class="text-sm text-gray-500 mt-1">Lien YouTube externe</p>
+                        <div class="mt-4 flex gap-2">
+                            <span class="text-[10px] bg-gray-100 px-2 py-1 rounded text-gray-600 font-bold uppercase">Physique-Chimie</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                <h2 class="text-xl font-bold text-gray-800 mb-4"><i class="fas fa-pen-nib text-purple-500 mr-2"></i>Brouillon collaboratif</h2>
+                <textarea class="w-full h-32 p-4 bg-yellow-50 border-none rounded-xl text-gray-700 placeholder-yellow-600 focus:ring-0" placeholder="Notez ici les infos de dernière minute (ex: salle de cours déplacée)..."></textarea>
+                <div class="mt-2 flex justify-end">
+                    <button class="text-xs font-bold text-indigo-600 hover:underline">Enregistrer dans Supabase</button>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <footer class="mt-12 p-8 text-center text-gray-400 text-sm">
+        <p>Projet réalisé pour l'école &bull; Powered by Supabase & HTML5</p>
+    </footer>
+
+</body>
+</html>
